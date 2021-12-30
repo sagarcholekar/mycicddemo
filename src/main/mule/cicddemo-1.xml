@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="afa55dff-6f93-487b-b5cb-87ed890d7bc9" >
+		<http:listener-connection host="0.0.0.0" port="8097" />
+	</http:listener-config>
+	<flow name="cicddemo-1Flow" doc:id="d28c7177-0b98-4ad8-bfed-7918b0328ac2" >
+		<http:listener doc:name="Listener" doc:id="7b807d20-1be7-41b1-b5fc-86be79b7cc76" config-ref="HTTP_Listener_config" path="/hello"/>
+		<set-payload value="MyCicdDemo" doc:name="Set Payload" doc:id="0951489e-ca54-4459-94c7-0f11f67d3cfd" />
+	</flow>
+</mule>
